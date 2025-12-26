@@ -1,0 +1,179 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  /* Thêm padding-top bằng chiều cao của menu để nội dung không bị đè */
+  padding-top: 70px; 
+}
+
+/* Phần Menu cố định */
+.nav-desktop {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  /* Thuộc tính quan trọng để giữ menu đứng lại */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-portfolio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.menu li {
+  margin-left: 2rem;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative; /* Cần thiết cho hiệu ứng gạch chân */
+  display: inline-block;
+}
+
+.menu a:hover {
+  color: #007bff;
+}
+
+/* Hiệu ứng gạch chân khi hover */
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+
+.section-home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Chiều cao bằng với viewport */
+  overflow: hidden;
+}
+
+.section-home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Đảm bảo hình ảnh bao phủ không gian */
+  z-index: -1;
+  /* Đưa hình nền ra sau */
+}
+
+.row {
+  position: relative;
+  z-index: 1;
+  /* Đảm bảo nội dung hiển thị trên cùng */
+  color: white;
+  /* Màu chữ */
+  text-align: center;
+  padding: 20px;
+  /* Khoảng cách bên trong */
+}
+
+.infor h2 {
+  font-size: 2.5rem;
+  /* Kích thước chữ */
+  margin: 20px 0;
+  /* Khoảng cách bên trên và bên dưới */
+}
+
+.infor p {
+  font-size: 1.5rem;
+  /* Kích thước chữ */
+}
+
+.typed {
+  font-weight: bold;
+  /* In đậm chữ */
+  color: yellow;
+  /* Màu sắc của chữ trên "Developer" */
+}
+
+
+/* About Section */
+.section-about {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+ 
+}
