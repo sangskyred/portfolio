@@ -40,6 +40,14 @@ const HomeDesktop = () => {
                     <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
                 </div>
             </section>
+
+              <section id="section-contact" className="section-contact">
+                <div className="container section-title aos-init aos-animate" data-aos="fade-up">
+                    <span className="subtitle">Contact</span>
+                    <h2>About Me</h2>
+                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+                </div>
+            </section>
         </div>
     )
 }

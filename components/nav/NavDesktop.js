@@ -13,7 +13,7 @@ const NavDesktop = () => {
                         <li><Link href="#section-home">Home</Link></li>
                         <li><Link href="#section-about">About</Link></li>
                         <li><Link href="#section-services">Services</Link></li>
-                        <li><Link href="#section-home">Contact</Link></li>
+                        <li><Link href="#section-contact">Contact</Link></li>
                     </ul>
                 </div>
             </div>
