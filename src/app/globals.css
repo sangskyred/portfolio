@@ -1,97 +1,99 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --primary-color: #007bff;
+    --text-color: #333;
+    --bg-color: #fff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease;
 }
 
-html {
-  scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  /* Thêm padding-top bằng chiều cao của menu để nội dung không bị đè */
-  padding-top: 70px; 
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
 }
 
-/* Phần Menu cố định */
+/* Header và Nav */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+}
+
 .nav-desktop {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  
-  /* Thuộc tính quan trọng để giữ menu đứng lại */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+    padding: 1rem 2rem;
 }
 
 .nav-portfolio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;  /* Tỉ lệ 2:1 theo chiều ngang */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem; /* Khoảng cách giữa logo và menu nếu cần */
 }
 
 .logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 .menu ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.menu li {
-  margin-left: 2rem;
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    justify-content: flex-end; /* Đẩy các link menu sát về bên phải */
 }
 
 .menu a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative; /* Cần thiết cho hiệu ứng gạch chân */
-  display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition);
 }
 
 .menu a:hover {
-  color: #007bff;
+    color: var(--primary-color);
 }
 
-/* Hiệu ứng gạch chân khi hover */
-.menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #007bff;
-  transition: width 0.3s ease;
+.menu a.active {
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
-.menu a:hover::after {
-  width: 100%;
+.menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
+:root {
+  
+  --text-color: #ffffff;
+  --heading-color: #ffffff;
+  --overlay-color: rgba(0, 0, 0, 0.3);
+}
 
 .section-home {
   position: relative;
   width: 100%;
   height: 100vh;
-  /* Chiều cao bằng với viewport */
   overflow: hidden;
 }
 
@@ -102,78 +104,37 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Đảm bảo hình ảnh bao phủ không gian */
   z-index: -1;
-  /* Đưa hình nền ra sau */
+}
+
+.section-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 0;
 }
 
 .row {
-  position: relative;
-  z-index: 1;
-  /* Đảm bảo nội dung hiển thị trên cùng */
-  color: white;
-  /* Màu chữ */
-  text-align: center;
-  padding: 20px;
-  /* Khoảng cách bên trong */
-}
-
-.infor h2 {
-  font-size: 2.5rem;
-  /* Kích thước chữ */
-  margin: 20px 0;
-  /* Khoảng cách bên trên và bên dưới */
-}
-
-.infor p {
-  font-size: 1.5rem;
-  /* Kích thước chữ */
-}
-
-.typed {
-  font-weight: bold;
-  /* In đậm chữ */
-  color: yellow;
-  /* Màu sắc của chữ trên "Developer" */
-}
-
-
-/* About Section */
-.section-about {
-  padding: 5rem 0;
-  background: #fff;
-}
-
-.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  color: var(--text-color);
+  z-index: 1;
 }
 
-.subtitle {
-  color: #007bff;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.info h2 {
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.section-title h2 {
-  font-size: 2.2rem;
-  margin: 1rem 0;
-  color: #333;
-}
-
-.section-title p {
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
- 
+.info p {
+  font-size: 1.5rem;
 }

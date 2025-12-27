@@ -1,24 +1,43 @@
-import React from "react";
-import Link from 'next/link'
+'use client'
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const NavDesktop = () => {
+    useEffect(() => {
+
+    }, []);
+
+    const links = [
+        { href: "#home", label: "Home" },
+        { href: "#about", label: "About" },
+        { href: "#resume", label: "Resume" },
+        { href: "#services", label: "Services" },
+        { href: "#contact", label: "Contact" },
+    ];
+
+
+
     return (
-        <nav className="nav-desktop">
-            <div className="nav-portfolio">
-                <div className="logo">
-                    <Link href="/">Sang</Link>
-                </div>
-                <div className="menu">
-                    <ul>
-                        <li><Link href="#section-home">Home</Link></li>
-                        <li><Link href="#section-about">About</Link></li>
-                        <li><Link href="#section-services">Services</Link></li>
-                        <li><Link href="#section-contact">Contact</Link></li>
-                    </ul>
-                </div>
+        <nav id="navmenu" className="navmenu">
+            <div className="logo">
+                <Link href="/">Sang</Link>
+            </div>
+            <div className="menu">
+                <ul>
+                    {links.map(({ href, label }) => (
+                        <li key={href}>
+                            <Link
+                                href={href}
+
+                            >
+                                {label}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavDesktop;

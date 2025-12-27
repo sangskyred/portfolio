@@ -3,9 +3,7 @@ import NavMobile from "../nav/NavMobile";
 
 const HomeMobile = () => {
     return (
-        <div>
-            <NavMobile />
-        </div>
+        <NavMobile />
     )
 }
 

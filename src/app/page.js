@@ -6,9 +6,8 @@ import HomeMobile from '../../components/home/HomeMobile';
 
 export default async function Page() {
   const { device } = await checkDevice();
-
   return (
-    <div>
+    <div className='data-overlay-container'>
       {device == 'ui-mobile' ? <HomeMobile /> : <HomeDesktop />}
     </div>
   );
