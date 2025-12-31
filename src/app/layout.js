@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { checkDevice } from "../../lib/device";
 
-import './common.css';
+import './common2.css';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

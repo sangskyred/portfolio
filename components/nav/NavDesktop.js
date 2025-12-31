@@ -8,14 +8,11 @@ const NavDesktop = () => {
     }, []);
 
     const links = [
-        { href: "#home", label: "Home" },
-        { href: "#about", label: "About" },
+        { href: "#hero", label: "Home" },
+        { href: "#skills", label: "Skills" },
         { href: "#resume", label: "Resume" },
-        { href: "#services", label: "Services" },
         { href: "#contact", label: "Contact" },
     ];
-
-
 
     return (
         <nav id="navmenu" className="navmenu">

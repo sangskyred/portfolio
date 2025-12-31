@@ -8,7 +8,7 @@ export default async function Page() {
   const { device } = await checkDevice();
   return (
     <div className='data-overlay-container'>
-      {device == 'ui-mobile' ? <HomeMobile /> : <HomeDesktop />}
+      {device == 'ui-mobile' ? <HomeDesktop /> : <HomeDesktop />}
     </div>
   );
 }
